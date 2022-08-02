@@ -21,9 +21,8 @@
 title: iFood Security Blog
 email: security@ifood.com.br
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+ Welcome to the iFood security blog. We are excited to promote Cybersecurity and give back to the open source community once it has provided us with so much information and tools to build we have done upon since the beginning of our journey. 
+ Thus, we intend to share projects and techniques utilized in our production environment, broadcast new tools, and promote good practices.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ifoodsecurity
