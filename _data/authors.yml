@@ -1,18 +1,65 @@
-animall:
-  # name        : "emanuel"
+e-valente:
+  name        : "Emanuel Valente"
   bio         : "I solve problems"
-  avatar      : "/assets/img/animall.png"
+  avatar      : "/assets/authors/e-valente-new.png"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:emanuelvalente@gmail.com"
+      url: "mailto:emanuel.valente@ifood.com.br"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/emanuelvalente/"
+      url: "https://www.linkedin.com/in/emanuelvalente"
     - label: "Website"
       icon: "fas fa-fw fa-link"
-      url: "https://animall-labs.com"
+      url: "https://blog.ifoodsecurity.com"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/the_animalll"
+      url: "https://twitter.com/emanu_valente"
+
+jose-almas:
+  name        : "José Almas"
+  bio         : "Zé"
+  avatar      : "/assets/authors/jose-almas.png"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:jose.almas@ifood.com.br"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/jealmas"
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://github.com/jeajjr"
+      
+pirate:
+  name        : "Pedro Terra Delboni"
+  bio         : "Pirate"
+  avatar      : "/assets/authors/pirate.png"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:pedro.terra@ifood.com.br"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/xxx"
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://xxx.com"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/xxxx"
+
+andre.osti:
+  name        : "André Osti"
+  bio         : ""
+  avatar      : "/assets/authors/osti.png"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:andre.osti@ifood.com.br"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/andreosti"
+
+
 
