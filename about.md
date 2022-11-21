@@ -3,7 +3,6 @@ layout: post
 title: About
 permalink: /about/
 ---
-
 _Hello, we are the iFood Cybersec team :)_
 
 <p style="text-align: justify;">
@@ -24,5 +23,7 @@ We look forward to you joining us in this new chapter with your thoughts, insigh
 iFood Cybersec Team.
 
 <center>
-<img src="/assets/img/ifood-logo.png" width="200" height="100">
+<img src="/assets/img/ifood-logo-red.png" width="200" height="100">
 </center>
+
+

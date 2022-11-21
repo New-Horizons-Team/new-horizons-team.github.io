@@ -30,8 +30,7 @@ github_username:  ifoodsecurity
 
 # Build settings
 #theme: minima
-# theme: minimal-mistakes-jekyll
-remote_theme: mmistakes/minimal-mistakes
+theme: minimal-mistakes-jekyll
 plugins:
   - jekyll-data
   - jekyll-paginate
@@ -41,11 +40,7 @@ plugins:
   - jemoji
   - jekyll-include-cache
 
-analytics:
-  provider: "google-gtag"
-  google:
-    tracking_id: "G-T2VZWVS4VX"
-    anonymize_ip: false # default
+logo: "/assets/img/ifood-logo-white.png"
 
 # Exclude from processing.
 # The following items will not be processed, by default.

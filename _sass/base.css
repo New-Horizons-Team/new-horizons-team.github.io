@@ -1,0 +1,43 @@
+.page__footer {
+    background-color: #ed1b30;
+    color: #fff;
+}
+
+.greedy-nav a.site-title {
+    font-family: "TipoiFoodTitulos";
+    color: #ed1b30;
+}
+
+.greedy-nav a {
+	font-family: 'ifoodTextos';
+    color: #ed1b30;
+}
+
+.footer-logo {
+    width: 80px;
+    float: left;
+}
+
+.page__content a {
+    color: #cf1d43;
+}
+
+.archive__item-title a {
+    color: #cf1d43;
+}
+
+@font-face {
+	font-family: 'TipoiFoodTitulos';
+	font-style: normal;
+	font-weight: normal;
+	font-display: swap;
+	src: url('/assets/fonts/TipoiFoodTitulos-ExtraBold.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'ifoodTextos';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('/assets/fonts/TipoiFoodTextos-Regular.woff') format('woff');
+}
