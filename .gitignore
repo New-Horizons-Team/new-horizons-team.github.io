@@ -1,5 +1,6 @@
 _site
 package-lock.json
+Gemfile.lock
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
