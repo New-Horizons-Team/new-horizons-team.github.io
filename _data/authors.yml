@@ -41,13 +41,7 @@ pirate:
       url: "mailto:pedro.terra@ifood.com.br"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/xxx"
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://xxx.com"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/xxxx"
+      url: "https://www.linkedin.com/in/pedro-terra-delboni-7a1175236"
 
 andre.osti:
   name        : "André Osti"
