@@ -30,7 +30,7 @@ jose-almas:
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://github.com/jeajjr"
-      
+       
 pirate:
   name        : "Pedro Terra Delboni"
   bio         : "Pirate"
@@ -39,9 +39,6 @@ pirate:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:pedro.terra@ifood.com.br"
-    - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/pedro-terra-delboni-7a1175236"
 
 andre.osti:
   name        : "André Osti"
@@ -54,6 +51,18 @@ andre.osti:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/andreosti"
+
+caio.ferreira:
+  name        : "Caio Ferreira"
+  bio         : "Passionate by new problems and always trying to improve developer's life."
+  avatar      : "/assets/authors/caio.png"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:caio.cavalcante@ifood.com.br"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/caiorcferreira"
 
 
 
