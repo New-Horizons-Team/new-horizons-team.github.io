@@ -605,9 +605,7 @@ Now:
 from langchain_experimental.prompts import load_prompt
 ```
 
-Vendors of Large Language Models, such as OpenAI, offer [high-level APIs](https://platform.openai.com/docs/guides/gpt/chat-completions-api) for accessing GPT models. These high-level APIs are generally more secure, often incorporating safety features like [ChatML](https://github.com/openai/openai-python/blob/main/chatml.md). Below is an example illustrating how to leverage OpenAI's high-level API for GPT models.
-
-LLM vendors like OpenAI provide [high-level](https://platform.openai.com/docs/guides/gpt/chat-completions-api) API for consuming GPT models. This high-level API is more secure because they usually implement guardrails like chatml. Here is an example of leveraging high-level API for OpenAI models. 
+LLM vendors like OpenAI provide [high-level](https://platform.openai.com/docs/guides/gpt/chat-completions-api) API for consuming GPT models. This high-level API is more secure because they usually implement guardrails like [ChatML](https://github.com/openai/openai-python/blob/main/chatml.md). Here is an example of leveraging high-level API for OpenAI models. 
 
 Note: If you want to understand chatml, check this [link](https://docs.google.com/document/d/1mYBAIilR8IcIfzvIfrsayAU_XJJ-w5Oi6zYY53g0LFs/edit). There's an exciting discussion about it [here](https://news.ycombinator.com/item?id=34988748).
 
@@ -652,8 +650,6 @@ filename:*pyproject.toml + langchain
 Here's an example for slack. As you can see, it lists messages and shared files:
 
 ![Slack - File filter](/assets/sec-eng/img/slack-filter-requirements.png "Slack - File filter")
-
-
 
 
 ## Conclusion
