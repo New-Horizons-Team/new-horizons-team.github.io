@@ -605,7 +605,7 @@ Now:
 from langchain_experimental.prompts import load_prompt
 ```
 
-Vendors of Language Learning Models, such as OpenAI, offer [high-level APIs](https://platform.openai.com/docs/guides/gpt/chat-completions-api) for accessing GPT models. These high-level APIs are generally more secure, often incorporating safety features like [ChatML](https://github.com/openai/openai-python/blob/main/chatml.md). Below is an example illustrating how to leverage OpenAI's high-level API for GPT models.
+Vendors of Large Language Models, such as OpenAI, offer [high-level APIs](https://platform.openai.com/docs/guides/gpt/chat-completions-api) for accessing GPT models. These high-level APIs are generally more secure, often incorporating safety features like [ChatML](https://github.com/openai/openai-python/blob/main/chatml.md). Below is an example illustrating how to leverage OpenAI's high-level API for GPT models.
 
 LLM vendors like OpenAI provide [high-level](https://platform.openai.com/docs/guides/gpt/chat-completions-api) API for consuming GPT models. This high-level API is more secure because they usually implement guardrails like chatml. Here is an example of leveraging high-level API for OpenAI models. 
 
