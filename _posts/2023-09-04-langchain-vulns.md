@@ -604,6 +604,8 @@ Now:
 
 from langchain_experimental.prompts import load_prompt
 ```
+      
+**3. Utilize high-level API for consuming LLMs**      
 
 LLM vendors like OpenAI provide [high-level](https://platform.openai.com/docs/guides/gpt/chat-completions-api) API for consuming GPT models. This high-level API is more secure because they usually implement guardrails like [ChatML](https://github.com/openai/openai-python/blob/main/chatml.md). Here is an example of leveraging high-level API for OpenAI models. 
 
