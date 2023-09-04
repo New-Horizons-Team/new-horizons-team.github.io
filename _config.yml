@@ -39,6 +39,7 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
+  - jekyll-toc
 
 logo: "/assets/img/ifood-logo-white.png"
 

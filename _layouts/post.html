@@ -36,7 +36,7 @@ layout: default
               <i class="far fa-clock" aria-hidden="true"></i> {% include read-time.html %}
             {% endif %}
           </p>
-          {% include google-gtag.html %}
+
         </header>
       {% endunless %}
 
@@ -53,7 +53,7 @@ layout: default
             </nav>
           </aside>
         {% endif %}
-        {{ content }}
+        {{ content | toc }}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
 
         {% if page.read_time %} <!-- hack to show only on posts, as are the only ones using read_time for this layout -->
