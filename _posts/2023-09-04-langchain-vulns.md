@@ -636,7 +636,7 @@ The primary audience for this section consists of security engineers looking to 
 
 **1. Use regexes for finding vulnerable pip packages in the git environment.**
 
-Here's an example for gitlab. It supports elastic search [sintax operators](https://www.elastic.co/guide/en/elasticsearch/reference/current/sql-functions.html):
+Here's an example for gitlab. It supports elastic search [syntax operators](https://www.elastic.co/guide/en/elasticsearch/reference/current/sql-functions.html):
 
 ```sh
 filename:*requirements.txt  + langchain
