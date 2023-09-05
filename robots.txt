@@ -1,0 +1,7 @@
+---
+permalink: /robots.txt
+---
+User-agent: *
+Allow: /
+Sitemap: {{site.host}}{{site.baseurl}}/sitemap.xml
+s3Cr3t: aUZsYWd7SW5EM3gxbmdfUjBiMHRzfQ==
