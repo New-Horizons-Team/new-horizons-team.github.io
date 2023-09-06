@@ -11,9 +11,9 @@ toc: true
 ## Introduction
 Hey there, cyber enthusiasts! 🚀
 
-We've prepared this blog post to equip developers, data scientists, and security engineers with valuable insights into the risks linked to technologies that interface with Large Language Models (LLMs). We will explore 'Langchain,' detailing its functionality, applications, and the vulnerabilities discovered within it. Additionally, we offer practical tips for identifying and mitigating such vulnerabilities.
+In this post, we targeted developers, data scientists & engineers, and security engineers to provide valuable insights into the risks linked to technologies that interface with Large Language Models (LLMs). We will explore [Langchain](https://python.langchain.com/docs/get_started/introduction.html), detailing its functionality, applications, and recent vulnerabilities. Additionally, we offer practical tips for identifying and mitigating such vulnerabilities.
 
-By the end of this post, you will have a comprehensive understanding of the risks associated with LLMs in various technological environments and actionable guidance on how to identify and address these potential vulnerabilities.
+By the end of this reading, you will have a comprehensive understanding of the risks associated with LLMs in various technological environments and actionable guidance on identifying and addressing these potential vulnerabilities.
 
 This post might be a bit of a long read for some. So, to make life easier, here's a quick cheat sheet based on what you're looking to get out of it:
 
@@ -24,9 +24,9 @@ This post might be a bit of a long read for some. So, to make life easier, here'
    - already know a thing or two about Langchain to catch up on its weak spots and how to protect against them.
 
 - Start with the [prevention](#tips-for-preventing-langchain-vulnerabilities) section if you:
-  - are a data scientist or ML enthusiast who's mostly curious about safety measures and how to keep those vulnerabilities at bay.
+  - are a data scientist/engineer or ML enthusiast who's mostly curious about safety measures and how to keep those vulnerabilities at bay.
 
-Feel free to jump in wherever makes the most sense for you! 
+And, of course, feel free to jump in wherever makes the most sense for you! 
 
 <p style="text-align: justify;">
 
@@ -520,16 +520,16 @@ How many employees are there?
 sqlite3.OperationalError: no such table: employees
 ```
 ## Tips for preventing langchain vulnerabilities
-If you're keen on preventing against LangChain vulnerabilities, you've arrived at the perfect resource. 
+If you're keen on preventing against LangChain vulnerabilities, you've arrived at the perfect resource. Here we suggest the most relevant:
 
 **Pro Tip: Have You Checked the OWASP TOP 10 for LLM Applications Yet?**
-It provides practical, actionable, and concise security guidance to help these professionals
+This "brand new" OWASP TOP 10 provides practical, actionable, and concise security guidance to help these professionals
 navigate the complex and evolving terrain of LLM security. If you haven't already, we highly recommend checking out the [TOP 10 for LLM Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/assets/PDF/OWASP-Top-10-for-LLMs-2023-v1_0_1.pdf). This initiative is one of several where iFood is [actively](https://github.com/OWASP/www-project-top-10-for-large-language-model-applications/wiki/Contributors) contributing to the open-source and cybersecurity communities. 
 
 
 **1. Utilize an Integrated Development Environment (IDE) that features integration with CVE databases.**
 
-Today, most popular IDEs offer plugins that can query CVE databases, including Visual Studio Code and JetBrains’ suite of IDEs like IntelliJ, PyCharm, and GoLand.In the example below, we spotlight how PyCharm identifies langchain CVEs. Also, it’s good practice to keep all your dependencies up-to-date.
+Today, most popular IDEs offer plugins that can query CVE databases, including Visual Studio Code and JetBrains' suite of IDEs like IntelliJ, PyCharm, and GoLand. In the example below, we spotlight how PyCharm identifies langchain CVEs. Also, it's good practice to keep all your dependencies up-to-date.
 
 ![Pycharm vulnerability identification](/assets/sec-eng/img/pycharm-requirements-vuln-deps.png "Pycharm vulnerability identification")
 
@@ -549,7 +549,7 @@ The langchain repository was [reestructured](https://github.com/langchain-ai/lan
 > - Pandas agent
 > - Python agent  
 
-Basically, the potential vulnerable packages were move to experimental. So, in practice we have the following:
+The potentially vulnerable packages were moved to experimental. So, in practice, we have the following:
 
 - langchain.experimental:    
 
@@ -607,9 +607,9 @@ from langchain_experimental.prompts import load_prompt
       
 **3. Utilize high-level API for consuming LLMs**      
 
-LLM vendors like OpenAI provide [high-level](https://platform.openai.com/docs/guides/gpt/chat-completions-api) API for consuming GPT models. This high-level API is more secure because they usually implement guardrails like [ChatML](https://github.com/openai/openai-python/blob/main/chatml.md). Here is an example of leveraging high-level API for OpenAI models. 
+LLM vendors like OpenAI provide [high-level](https://platform.openai.com/docs/guides/gpt/chat-completions-api) API for consuming GPT models. This high-level API is more secure because it usually implements guardrails like [ChatML](https://github.com/openai/openai-python/blob/main/chatml.md). Here is an example of leveraging high-level API for OpenAI models. 
 
-Note: If you want to understand chatml, check this [link](https://docs.google.com/document/d/1mYBAIilR8IcIfzvIfrsayAU_XJJ-w5Oi6zYY53g0LFs/edit). There's an exciting discussion about it [here](https://news.ycombinator.com/item?id=34988748).
+Note: If you want to understand chatml, check this [link](https://docs.google.com/document/d/1mYBAIilR8IcIfzvIfrsayAU_XJJ-w5Oi6zYY53g0LFs/edit). Also, there's an exciting discussion about it [here](https://news.ycombinator.com/item?id=34988748).
 
 ```py 
 import openai
@@ -626,17 +626,17 @@ openai.ChatCompletion.create(
 ``` 
 
 **4. Utilize renovate bot for automated dependency updates**    
-[Renovate](https://github.com/renovatebot/renovate) is a tool that automatically updates the dependencies of your software projects. It can be used with a variety of package managers, including npm, Yarn, Maven, Gradle, and Pip. It scans your repositories for outdated dependencies. When it finds an outdated dependency, it will create a pull request to update the dependency to the latest version. You can then review and merge the pull request. 
+[Renovate](https://github.com/renovatebot/renovate) is a tool that automatically updates the dependencies of your software projects. It can be used with a variety of package managers, including npm, Yarn, Maven, Gradle, and Pip. It scans your repositories for outdated dependencies. When it finds an outdated dependency, it will create a pull request to update the dependency to the latest version. You can then review and merge the pull request (cool feature, isn't?). 
 
 Here's a renovate [tutorial](https://github.com/renovatebot/tutorial) using github. For Gitlab and other Git hosting services, you can check the [official documentation](https://docs.renovatebot.com/modules/platform/gitlab/).
 
 ## Tips for identifying langchain vulnerabilities
 
-The primary audience for this section consists of security engineers looking to identify vulnerabilities within their work environments, corporate or production. Below, we offer some tips for locating vulnerable versions of LangChain, though these tips can easily be extended to cover all vulnerable pip packages.
+Last but not least, this section targets security engineers and passionate developers for security looking to identify vulnerabilities within their work environments, corporate or production. Below, we offer some tips for locating vulnerable versions of LangChain, though these tips can easily be extended to cover all vulnerable pip packages.
 
 **1. Use regexes for finding vulnerable pip packages in the git environment.**
 
-Here's an example for gitlab. It supports elastic search [syntax operators](https://www.elastic.co/guide/en/elasticsearch/reference/current/sql-functions.html):
+Here's an example for Gitlab. It supports elastic search [syntax operators](https://www.elastic.co/guide/en/elasticsearch/reference/current/sql-functions.html):
 
 ```sh
 filename:*requirements.txt  + langchain
