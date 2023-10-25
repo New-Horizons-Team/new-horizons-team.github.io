@@ -5,7 +5,6 @@ date: 2023-10-25 16:00:00 -0300
 categories: software engineering
 author_profile: true
 author: caio.ferreira
-published: false
 ---
 
 It is arguably the most crucial principle in software design because most other principles and practices have their roots here.
