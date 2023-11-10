@@ -2,14 +2,9 @@
 main: 
   - title: "home"
     url: /
+  - title: "careers"
+    url: https://carreiras.ifood.com.br/jobs
+    # see issue https://github.com/mmistakes/minimal-mistakes/issues/2388
+    # it doesnt support oppening in a new page
   - title: "about"
     url: /about
-
-#  - title: "About"
-#    url: /about
-#  - title: "Sample Posts"
-#    url: /year-archive/
-#  - title: "Sample Collections"
-#    url: /collection-archive/
-#  - title: "Sitemap"
-#    url: /sitemap/

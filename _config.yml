@@ -27,9 +27,13 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ifoodsecurity
 github_username:  ifoodsecurity
+repository: New-Horizons-Team/new-horizons-team.github.io
+
+atom_feed:
+  hide: true
 
 # Build settings
-#theme: minima
+#theme: minimal-mistakes-jekyll
 remote_theme: mmistakes/minimal-mistakes
 plugins:
   - jekyll-data
@@ -42,6 +46,20 @@ plugins:
   - jekyll-toc
 
 logo: "/assets/img/ifood-logo-white.png"
+
+footer:
+  links:
+    - label: ""
+      icon: "fab fa-lg fa-instagram icon-white"
+      url: "https://www.instagram.com/ifooduniverso/"
+    - label: ""
+      icon: "fab fa-lg fa-linkedin icon-white"
+      url:  "https://www.linkedin.com/company/ifood-/"
+    - label: ""
+      icon: "fab fa-lg fa-medium icon-white"
+      url: "https://medium.com/ifood-engineering"
+
+# attempt to set header image using defaults didn't work out.
 
 # Exclude from processing.
 # The following items will not be processed, by default.

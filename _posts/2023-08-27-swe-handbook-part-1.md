@@ -22,8 +22,7 @@ Second, looking at the landscape in Security shows us that we are not living any
 After this long introduction, where I hope not to have lost you, below you will find an index of the chapters, which will be updated as each one is published. They are as concise and objective as possible to work as an explanation and a reference.
 
 ### Chapters
-
-1. [Clean Coding]({{ site.baseurl }}{% link _posts/2023-08-27-swe-handbook-part-2.md %})
+1. [Clean Coding]({% post_url 2023-08-27-swe-handbook-part-2 %})
 
 ### Glossary
 
