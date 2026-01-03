@@ -34,9 +34,9 @@ atom_feed:
 
 # Build settings
 # To run locally, use the following theme:
-theme: minimal-mistakes-jekyll
+#theme: minimal-mistakes-jekyll
 # To run on GitHub Pages, use the following theme:
-#remote_theme: mmistakes/minimal-mistakes
+remote_theme: mmistakes/minimal-mistakes
 plugins:
   - jekyll-data
   - jekyll-paginate
