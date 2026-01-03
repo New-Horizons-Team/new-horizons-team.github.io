@@ -33,8 +33,10 @@ atom_feed:
   hide: true
 
 # Build settings
-#theme: minimal-mistakes-jekyll
-remote_theme: mmistakes/minimal-mistakes
+# To run locally, use the following theme:
+theme: minimal-mistakes-jekyll
+# To run on GitHub Pages, use the following theme:
+#remote_theme: mmistakes/minimal-mistakes
 plugins:
   - jekyll-data
   - jekyll-paginate
