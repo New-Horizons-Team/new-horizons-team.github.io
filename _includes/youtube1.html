@@ -1,9 +1,13 @@
 <div class="embed-container">
   <iframe
-      src="https://www.youtube.com/embed/{{ include.id }}"
+      src="https://www.youtube.com/embed/{{ include.id }}?cc_load_policy=1&enablejsapi=1{% if include.lang %}&hl={{ include.lang }}&cc_lang_pref={{ include.lang }}{% endif %}"
       width="700"
       height="480"
       frameborder="0"
-      allowfullscreen="true">
+      allowfullscreen="true"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
   </iframe>
 </div>
+<p style="margin-top: 10px; font-style: italic; color: #666;">
+  <strong>Note:</strong> Watch on <a href="https://www.youtube.com/watch?v={{ include.id }}" target="_blank" rel="noopener noreferrer">YouTube</a> to access multiple audio tracks including the English version (click the settings gear icon → Audio track).
+</p>
