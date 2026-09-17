@@ -3,6 +3,9 @@ layout: post
 title: "Software Engineering Handbook (Part 3) - Single Responsibility Principle"
 date: 2023-10-25 16:00:00 -0300
 categories: software engineering
+description: "Learn the Single Responsibility Principle through a practical Python example that separates input, business logic, composition, and output handling."
+excerpt: "Applying single responsibility to a small Python command-line tool."
+topic: "Secure Engineering"
 author_profile: true
 author: caio.ferreira
 ---

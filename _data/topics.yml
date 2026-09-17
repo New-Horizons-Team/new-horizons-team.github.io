@@ -1,0 +1,15 @@
+- title: AI Security
+  slug: ai-security
+  mark: AI
+- title: Cloud & Infrastructure
+  slug: cloud-infrastructure
+  mark: CI
+- title: Security Research
+  slug: security-research
+  mark: SR
+- title: Secure Engineering
+  slug: secure-engineering
+  mark: SE
+- title: Community
+  slug: community
+  mark: CO

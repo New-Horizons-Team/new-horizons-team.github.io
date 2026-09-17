@@ -3,6 +3,10 @@ layout: post
 title:  "Prompt Injection: Exploring, Preventing & Identifying Langchain Vulnerabilities"
 date:   2023-09-04 12:50:00 -0300
 categories: llm ml mlsec langchain cve prompt injection
+description: "Explore three historic LangChain vulnerabilities, including prompt-driven code and SQL execution, with practical guidance for finding and reducing exposure."
+excerpt: "A historical deep dive into LangChain RCE, SQL injection, and mitigation."
+topic: "AI Security"
+image: "/assets/sec-eng/img/langchain-modules.png"
 author_profile: true
 author: e-valente
 youtubeId1: LbT1yp6quS8
@@ -36,7 +40,7 @@ Ever tinkered with GPT-4? Perhaps even conjured up a chatbot with it? Oddly, if 
 <em>Tip: Need a quick dive into langchain realm? Check out this killer crash course in the video, below - no regrets, promise 🎥</em>
 </p>
 
-{% include youtube1.html id=page.youtubeId1 %}
+{% include youtube1.html id=page.youtubeId1 title="LangChain crash course" %}
 
 ## Langchain
 

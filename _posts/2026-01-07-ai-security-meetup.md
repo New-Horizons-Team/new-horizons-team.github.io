@@ -3,6 +3,11 @@ layout: post
 title:  "iFood AI Security Meetup: Opening Knowledge to the Community"
 date:   2026-01-08 00:50:00 -0300
 categories: ai-security ai aisec llm ml mlsec 
+description: "Watch talks from iFood's first AI Security Meetup on adversarial ML, MCP attacks, anomaly detection, LLM injection, and production-scale defenses."
+excerpt: "Four recorded talks from iFood's first AI Security Meetup."
+topic: "AI Security"
+featured: true
+featured_order: 1
 author_profile: true
 author: e-valente
 youtube_keynote: 3uva_zLQQXk
@@ -38,7 +43,7 @@ This talk presents an overview of the main security and privacy challenges in ar
 **Bio:** PhD candidate in Computer Science at ICMC/USP, who completed a research internship at the University of Florida focused on machine learning security and federated learning applied to healthcare. Received the Best Student Paper Award at IEEE CBMS 2024. Currently researching security in machine learning for medical applications, aiming to make models more resistant to adversarial attacks and privacy breaches. His main interests  include Security and Privacy, Deep Learning, Computer Vision, Digital Health, and Computer-Aided Diagnosis.
 
 
-{% include youtube1.html id=page.youtube_keynote %}
+{% include youtube1.html id=page.youtube_keynote title="Security in Machine Learning: From Traditional ML to LLMs" %}
 
 ---
 
@@ -52,7 +57,7 @@ environment, highlighting how security teams can stay one step ahead in a landsc
 
 **Bio:** José Augusto is a Lead AI Security Engineer at Nubank, working in both offensive and defensive security with a focus on AI ecosystems, including LLMs, agents, ML, and their interactions with traditional systems. He began studying AI during his PhD work in 2020 and has been fully dedicated to AI security since 2024. He holds a Master’s degree in Cybersecurity from the University of Brasília (UnB) and is an instructor at FIAP, Gohacking, and RNP. He holds certifications such as OSWP, OSCP, OSCE, OSWE, and OSEP, and served for two years as an Official Offensive Security Instructor in Brazil.
 
-{% include youtube1.html id=page.youtube_mcp %}
+{% include youtube1.html id=page.youtube_mcp title="How Can MCP Servers Attack You" %}
 
 ---
 
@@ -65,7 +70,7 @@ controls like MFA and roles with least privilege. In this talk, we'll present ou
 
 **Bio:** With over 11 years of experience in cybersecurity and software engineering, Andre Osti has built a career focused on securing applications. Currently working as a Software Engineer at iFood, he previously held security-focused roles at companies like Sidi (Samsung), Kryptus, and CPqD. Throughout his career, he's consistently worked at the intersection of security and software development, having experience with penetration testing, secure code review, and developing machine learning components. His background includes significant work with financial security systems, mobile security, and the implementation of security features for enterprise applications.
 
-{% include youtube1.html id=page.youtube_puma %}
+{% include youtube1.html id=page.youtube_puma title="One Endpoint to Guard Them All" %}
 
 ---
 
@@ -81,7 +86,7 @@ attacks in LLMs, building on her Master's in Computer Science and award-winning
 cryptography research—Best Short Paper at the Brazilian Symposium on Security in 2019.
 With 3+ years as a Software Engineer at Google (AI/LLM data pipelines), Microsoft (Azure infrastructure), and Amazon (backend systems), she bridges theoretical expertise with production-scale implementation.
 
-{% include youtube1.html id=page.youtube_llm %}
+{% include youtube1.html id=page.youtube_llm title="Injection Attacks and Security in LLMs" %}
 
 ---
 
@@ -93,4 +98,3 @@ This was **just the beginning**.
 
 👉 **Stay tuned.**
 More details will be shared soon.
-

@@ -1,6 +1,5 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: home
+title: iFood Security Blog
+description: Security engineering, research, and open-source insights from the teams protecting iFood at scale.
 ---

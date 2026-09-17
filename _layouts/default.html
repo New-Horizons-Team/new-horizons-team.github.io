@@ -1,0 +1,17 @@
+---
+---
+<!doctype html>
+<html lang="{{ site.lang | default: 'en-US' }}" class="no-js">
+  <head>
+    {% include head.html %}
+  </head>
+  <body class="layout-{{ page.layout | default: layout.layout }}">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    {% include site-header.html %}
+    <main id="main-content">
+      {{ content }}
+    </main>
+    {% include footer.html %}
+    <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
+  </body>
+</html>

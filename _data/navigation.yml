@@ -1,10 +1,10 @@
-# main links
-main: 
-  - title: "home"
+main:
+  - title: Articles
     url: /
-  - title: "careers"
+  - title: Topics
+    url: /topics/
+  - title: About
+    url: /about/
+  - title: Careers
     url: https://carreiras.ifood.com.br/jobs
-    # see issue https://github.com/mmistakes/minimal-mistakes/issues/2388
-    # it doesnt support oppening in a new page
-  - title: "about"
-    url: /about
+    external: true

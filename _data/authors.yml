@@ -18,7 +18,7 @@ e-valente:
 
 jose-almas:
   name        : "José Almas"
-  bio         : "Zé"
+  bio         : "Security engineer focused on identity, certificates, and infrastructure security."
   avatar      : "/assets/authors/jose-almas.png"
   links:
     - label: "Email"
@@ -33,7 +33,7 @@ jose-almas:
        
 pirate:
   name        : "Pedro Terra Delboni"
-  bio         : "Pirate"
+  bio         : "Security researcher interested in operating systems, exploit mitigations, and low-level security."
   avatar      : "/assets/authors/pirate.png"
   links:
     - label: "Email"
@@ -42,7 +42,7 @@ pirate:
 
 andre.osti:
   name        : "André Osti"
-  bio         : ""
+  bio         : "Security and software engineer working across application security, machine learning, and resilient systems."
   avatar      : "/assets/authors/osti.png"
   links:
     - label: "Email"
@@ -55,7 +55,7 @@ andre.osti:
 caio.ferreira:
   name        : "Caio Ferreira"
   bio         : "Passionate by new problems and always trying to improve developer's life."
-  avatar      : "/assets/authors/caio.png"
+  avatar      : "/assets/authors/caio-avatar.jpg"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -63,6 +63,4 @@ caio.ferreira:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/caiorcferreira"
-
-
 

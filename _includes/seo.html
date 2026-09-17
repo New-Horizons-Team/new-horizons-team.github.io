@@ -1,0 +1,96 @@
+{% assign seo_title = page.seo_title | default: page.title | default: site.title %}
+{% assign seo_description = page.description | default: page.excerpt | default: site.description | markdownify | strip_html | strip_newlines | normalize_whitespace | truncate: 160 %}
+{% assign canonical_url = page.url | default: '/' | absolute_url %}
+{% assign social_image = page.image | default: site.og_image | absolute_url %}
+{% assign page_author = site.data.authors[page.author] %}
+{% if page.url == '/' %}
+  {% assign document_title = site.title %}
+{% else %}
+  {% capture document_title %}{{ seo_title }} | {{ site.title }}{% endcapture %}
+{% endif %}
+
+<title>{{ document_title | strip | escape }}</title>
+<meta name="description" content="{{ seo_description | escape }}">
+<link rel="canonical" href="{{ canonical_url }}">
+
+{% if page.robots %}<meta name="robots" content="{{ page.robots }}">{% endif %}
+{% if page_author %}<meta name="author" content="{{ page_author.name | escape }}">{% endif %}
+
+<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="{{ site.title | escape }}">
+<meta property="og:title" content="{{ seo_title | escape }}">
+<meta property="og:description" content="{{ seo_description | escape }}">
+<meta property="og:url" content="{{ canonical_url }}">
+<meta property="og:image" content="{{ social_image }}">
+{% unless page.image %}
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+{% endunless %}
+{% if page.layout == 'post' %}
+  <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+  {% if page.last_modified_at %}<meta property="article:modified_time" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
+{% endif %}
+
+<meta name="twitter:card" content="summary_large_image">
+{% if site.twitter.username %}<meta name="twitter:site" content="@{{ site.twitter.username }}">{% endif %}
+<meta name="twitter:title" content="{{ seo_title | escape }}">
+<meta name="twitter:description" content="{{ seo_description | escape }}">
+<meta name="twitter:image" content="{{ social_image }}">
+
+{% if page.layout == 'post' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ page.title | jsonify }},
+  "description": {{ seo_description | jsonify }},
+  "image": {{ social_image | jsonify }},
+  "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+  "dateModified": {{ page.last_modified_at | default: page.date | date_to_xmlschema | jsonify }},
+  "mainEntityOfPage": {"@type": "WebPage", "@id": {{ canonical_url | jsonify }}},
+  "author": {"@type": "Person", "name": {{ page_author.name | default: site.name | jsonify }}},
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ site.name | jsonify }},
+    "url": {{ site.url | jsonify }},
+    "logo": {"@type": "ImageObject", "url": {{ '/assets/img/ifood-logo-red.png' | absolute_url | jsonify }}}
+  }
+}
+</script>
+{% elsif page.url == '/' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": {{ site.url | append: '/#organization' | jsonify }},
+      "name": {{ site.name | jsonify }},
+      "url": {{ site.url | append: '/' | jsonify }},
+      "logo": {{ '/assets/img/ifood-logo-red.png' | absolute_url | jsonify }},
+      "sameAs": {{ site.social.links | jsonify }}
+    },
+    {
+      "@type": "WebSite",
+      "@id": {{ site.url | append: '/#website' | jsonify }},
+      "name": {{ site.title | jsonify }},
+      "url": {{ site.url | append: '/' | jsonify }},
+      "description": {{ site.description | jsonify }},
+      "publisher": {"@id": {{ site.url | append: '/#organization' | jsonify }}}
+    }
+  ]
+}
+</script>
+{% else %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": {{ seo_title | jsonify }},
+  "description": {{ seo_description | jsonify }},
+  "url": {{ canonical_url | jsonify }},
+  "isPartOf": {"@type": "WebSite", "url": {{ site.url | append: '/' | jsonify }}}
+}
+</script>
+{% endif %}

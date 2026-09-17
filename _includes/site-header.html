@@ -1,0 +1,21 @@
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="site-brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} home">
+      <img src="{{ '/assets/img/ifood-logo-red.png' | relative_url }}" width="44" height="44" alt="">
+      <span class="site-brand__label">iFood Security</span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Open navigation" data-menu-toggle>
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="site-nav" id="site-navigation" aria-label="Primary navigation" data-site-nav>
+      {% for link in site.data.navigation.main %}
+        {% assign current = false %}
+        {% if link.url == page.url or link.url == '/' and page.url == '/' %}{% assign current = true %}{% endif %}
+        {% if link.url != '/' and page.url contains link.url %}{% assign current = true %}{% endif %}
+        <a href="{{ link.url | relative_url }}"{% if current %} aria-current="page"{% endif %}{% if link.external %} class="site-nav__careers" target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.title }}</a>
+      {% endfor %}
+    </nav>
+  </div>
+</header>

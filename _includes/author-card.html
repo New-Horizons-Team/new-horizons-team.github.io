@@ -1,0 +1,17 @@
+{% assign author = site.data.authors[page.author] %}
+{% if author %}
+<aside class="author-card" aria-label="About the author">
+  <img src="{{ author.avatar | relative_url }}" width="76" height="76" alt="{{ author.name | escape }}">
+  <div>
+    <h2>{{ author.name }}</h2>
+    {% if author.bio %}<p>{{ author.bio }}</p>{% endif %}
+    {% if author.links %}
+      <div class="author-card__links">
+        {% for link in author.links %}
+          <a href="{{ link.url }}"{% unless link.url contains 'mailto:' %} target="_blank" rel="noopener noreferrer"{% endunless %}>{{ link.label }}</a>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</aside>
+{% endif %}

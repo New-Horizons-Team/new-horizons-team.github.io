@@ -3,6 +3,13 @@ layout: post
 title:  "Running ransomware on AWS for fun"
 date:   2023-02-13 01:50:00 -0300
 categories: ransomware aws
+description: "See how iFood safely runs ransomware in isolated AWS environments to test malware detection, measure encrypted files, and strengthen disaster recovery."
+excerpt: "How isolated AWS malware testing supports ransomware recovery."
+topic: "Cloud & Infrastructure"
+image: "/assets/sec-eng/img/catwhy.jpeg"
+featured: true
+featured_order: 3
+toc: true
 author_profile: true
 author: andre.osti
 ---
@@ -15,7 +22,7 @@ You may wonder why a company like iFood would be willing to run ransomware on th
 
 <p align="center">
   Figure 1: The confused reader
-  <img width="360" height="250" src="/assets/sec-eng/img/catwhy.jpeg">
+  <img width="360" height="250" src="/assets/sec-eng/img/catwhy.jpeg" alt="Cat looking puzzled beside the question why">
 </p>
 
 <p style="text-align: justify;">

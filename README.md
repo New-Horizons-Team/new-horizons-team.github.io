@@ -1,235 +1,175 @@
 # iFood Security Blog
 
-Welcome to the official security blog of the iFood team. We share cybersecurity research, engineering insights, open-source tools, and best practices from our production environment.
+The official engineering blog for iFood Security. It publishes security research, production architecture, open-source work, and lessons from operating security at scale.
 
-## About
+Production: <https://blog.ifoodsecurity.com>
 
-This blog is dedicated to promoting cybersecurity knowledge and giving back to the open-source community that has enabled our work. We publish articles on:
+## Stack
 
-- Security research and vulnerability analysis
-- Incident response and disaster recovery strategies
-- Offensive and defensive security techniques
-- Tool development and security tooling
-- Engineering best practices for secure systems
+- Jekyll 3.9 through `github-pages` 229
+- Minimal Mistakes 4.27.3 as the pinned foundation
+- Liquid, SCSS, and small progressive JavaScript enhancements
+- GitHub Pages with the custom domain defined in `CNAME`
 
-**Blog URL:** https://blog.ifoodsecurity.com
+The site owns its layouts and visual components. Minimal Mistakes provides compatible Jekyll includes and baseline syntax styles, but its default page layouts are not used.
 
-## Quick Start
+## Architecture
 
-### Prerequisites
+- `_layouts/default.html` owns the document shell and global landmarks.
+- `_layouts/home.html` renders the editorial homepage and featured-post fallback.
+- `_layouts/post.html` renders article metadata, reading time, TOC, authors, pagination, and related posts.
+- `_includes/seo.html` owns canonical, social, and structured metadata.
+- `_sass/ifood-security.scss` contains the design tokens and responsive components.
+- `assets/js/site.js` progressively enhances only the mobile navigation.
 
-- Ruby 3.3.0 (managed by `.ruby-version`)
-- Bundler (included with Ruby)
-  
-For mac users, use the following link to setup the ruby https://jekyllrb.com/docs/installation/macos/.
+Keep presentation logic in layouts and includes rather than adding inline styles to Markdown content.
 
-### Setup
+## Local Development
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/New-Horizons-Team/new-horizons-team.github.io.git
-   cd new-horizons-team.github.io
-   ```
+Install Ruby, Bundler, and the project dependencies:
 
-2. **Install dependencies:**
-   ```bash
-   bundle install
-   ```
+```bash
+bundle install
+```
 
-3. **Run the development server:**
-   ```bash
-   bundle exec jekyll serve
-   ```
-   The site will be available at `http://localhost:4000`
+Run the site locally:
 
-4. **Build for production:**
-   ```bash
-   bundle exec jekyll build
-   ```
-   Output is generated in `_site/`
+```bash
+bundle exec jekyll serve
+```
 
-## Writing a Blog Post
+Open <http://localhost:4000>. Changes to `_config.yml` require a server restart.
 
-### Create a New Post
+Run the production build before opening a pull request:
 
-Posts are markdown files in the `_posts/` directory with the naming convention: `YYYY-MM-DD-title.md`
+```bash
+bundle exec jekyll clean
+JEKYLL_ENV=production bundle exec jekyll build --trace
+```
 
-### Front Matter Template
+Do not switch between `theme` and `remote_theme` for local development. The theme is pinned in `_config.yml` and is resolved consistently by `jekyll-remote-theme`.
+
+The minimum required checks are:
+
+```bash
+bundle check
+JEKYLL_ENV=production bundle exec jekyll build --trace
+git diff --check
+```
+
+## Writing A Post
+
+Create `_posts/YYYY-MM-DD-slug.md` with this front matter:
 
 ```yaml
 ---
 layout: post
-title: "Your Post Title"
+title: "Clear, descriptive article title"
 date: YYYY-MM-DD HH:MM:SS -0300
-categories: category1 category2
+categories: security engineering
+description: "A unique search description that explains the article's value."
+excerpt: "A concise editorial summary used on article cards."
+topic: "Secure Engineering"
+image: "/assets/sec-eng/img/article-cover.jpg"
 author: username
-author_profile: true
+toc: true
 ---
 ```
 
-**Important notes:**
-- The date uses Brazil timezone (GMT-3): `-0300`
-- Author `username` must match a key in `_data/authors.yml`
-- Categories help organize posts on the site
+Supported topics are defined in `_data/topics.yml`:
 
-### Writing Guidelines
+- AI Security
+- Cloud & Infrastructure
+- Security Research
+- Secure Engineering
+- Community
 
-- Use justified text alignment for prose:
-  ```html
-  <p style="text-align: justify;">Your text here...</p>
-  ```
-- Reference images relative to the site root:
-  ```html
-  ![Figure description](/assets/sec-eng/img/filename.png)
-  ```
-- Use centered figures with captions for clarity:
-  ```html
-  <p align="center">
-    Figure 1: Description
-    <img width="360" height="250" src="/assets/sec-eng/img/image.png">
-  </p>
-  ```
+The `categories` field is retained for existing permalink compatibility. Use `topic` for editorial navigation.
 
-## Managing Authors
+## Featured Articles
 
-Authors are defined in `_data/authors.yml`. Each author entry includes:
+Add these optional fields to curate the homepage:
+
+```yaml
+featured: true
+featured_order: 1
+```
+
+The homepage fills any remaining feature slots with recent posts automatically.
+
+## Editorial Requirements
+
+- Keep `description` unique and approximately 140 to 160 characters.
+- Use one descriptive page title; the layout supplies the article `h1`.
+- Start article sections at `##`, followed by `###` subsections.
+- Use descriptive image alt text rather than labels such as "Figure 1".
+- Put article images in `assets/sec-eng/img/`.
+- Use `last_modified_at` only after a substantive content update.
+- Do not change a published post's date or categories without a redirect plan.
+- Add links to related articles when they provide useful context.
+
+## Authors
+
+Authors are stored in `_data/authors.yml` and avatars in `assets/authors/`.
 
 ```yaml
 username:
   name: "Display Name"
-  bio: "Short biography"
-  avatar: "/assets/authors/image.png"
+  bio: "Short biography that establishes relevant expertise."
+  avatar: "/assets/authors/avatar.jpg"
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:email@example.com"
     - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://linkedin.com/in/..."
+      url: "https://linkedin.com/in/profile"
 ```
 
-To add a new author:
-1. Add their entry to `_data/authors.yml`
-2. Place their avatar image in `assets/authors/`
-3. Reference them in post front matter with the username
+The value in a post's `author` field must match an author key.
+
+## Topics
+
+Topic metadata used by homepage cards lives in `_data/topics.yml`. Indexable topic pages live in `_topics/`. A topic title must exactly match the post front matter value.
+
+## SEO
+
+The site generates:
+
+- Absolute canonical URLs
+- XML sitemap at `/sitemap.xml`
+- Atom feed at `/feed.xml`
+- Open Graph and Twitter Card metadata
+- `Organization`, `WebSite`, and `BlogPosting` structured data
+- Redirect pages through `jekyll-redirect-from`
+
+After deploying a new article:
+
+1. Confirm the production URL returns HTTP 200.
+2. Confirm the page appears in the sitemap.
+3. Inspect the URL in Google Search Console.
+4. Request indexing for time-sensitive publications when appropriate.
+
+Internal repository documents are excluded in `_config.yml` and must not be added to the public sitemap.
 
 ## Project Structure
 
+```text
+_data/       Navigation, topics, authors, and UI data
+_includes/   Reusable Liquid components
+_layouts/    Default, home, post, page, and topic layouts
+_posts/      Published Markdown articles
+_sass/       iFood Security design system
+_topics/     Topic landing pages
+assets/      CSS, JavaScript, fonts, images, and avatars
 ```
-.
-├── _posts/              # Blog posts (Markdown files)
-├── _data/               # Configuration data
-│   ├── authors.yml      # Author profiles
-│   ├── navigation.yml   # Site navigation
-│   └── ui-text.yml      # Localized UI text
-├── _includes/           # Reusable components
-│   ├── author_bio.html
-│   ├── footer.html
-│   ├── head.html
-│   └── ...
-├── _layouts/            # Page templates
-│   └── post.html        # Blog post template
-├── _sass/               # Stylesheets
-├── assets/              # Static assets
-│   ├── authors/         # Author avatars
-│   ├── img/             # General images
-│   ├── fonts/           # Custom iFood fonts
-│   └── sec-eng/img/     # Security posts images
-├── _config.yml          # Main Jekyll configuration
-├── index.md             # Homepage
-├── about.md             # About page
-└── CNAME                # GitHub Pages domain
-```
-
-## Technologies
-
-- **Jekyll** 3.9.4 - Static site generator
-- **Minimal Mistakes** - Theme
-- **Ruby** 3.3.0
-- **GitHub Pages** - Hosting and deployment
-
-### Plugins
-
-- `jekyll-feed` - Atom feed generation
-- `jekyll-paginate` - Post pagination
-- `jekyll-sitemap` - XML sitemap
-- `jekyll-toc` - Table of contents
-- `jekyll-gist` - GitHub Gist embedding
-- `jekyll-data` - Data file processing
-- `jemoji` - Emoji support
 
 ## Deployment
 
-The site is automatically deployed to GitHub Pages when changes are pushed to the `main` branch. The build is handled by GitHub Actions.
+GitHub Pages publishes the site from `main`. The custom domain is `blog.ifoodsecurity.com`; HTTPS and the redirect from the GitHub Pages hostname must remain enabled in repository settings.
 
-**Repository:** https://github.com/New-Horizons-Team/new-horizons-team.github.io
-**Branch:** `main`
-**Domain:** `blog.ifoodsecurity.com` (via CNAME)
+Deployment flow:
 
-## Development Workflow
+1. Build locally with `JEKYLL_ENV=production`.
+2. Merge the reviewed change into `main`.
+3. Confirm the Pages deployment succeeds in GitHub.
+4. Verify the homepage, one article, `/robots.txt`, and `/sitemap.xml` in production.
+5. Submit the updated sitemap and inspect representative URLs in Google Search Console.
 
-1. Create a feature branch for your changes
-2. Write posts or update content locally
-3. Test with `bundle exec jekyll serve`
-4. Push to the `main` branch to trigger deployment
-5. Verify changes at https://blog.ifoodsecurity.com
-
-## Local Development
-
-Make the following changes in the `_config.yml` file:
-
-1. Uncoment the line `theme: minimal-mistakes-jekyll` 
-2. Comment the line `remote_theme: mmistakes/minimal-mistakes`
-
-**Do not forget to back to previous state before deployment!**
-
-### Commands
-
-| Command | Purpose |
-|---------|---------|
-| `bundle install` | Install dependencies |
-| `bundle exec jekyll serve` | Run development server (auto-reload) |
-| `bundle exec jekyll build` | Build static site |
-| `bundle exec jekyll clean` | Remove build artifacts |
-
-**Note:** Changes to `_config.yml` require restarting the development server.
-
-## Contributing
-
-We welcome contributions! To add a post or contribute:
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/your-topic`
-3. Add your post to `_posts/`
-4. Test locally with `bundle exec jekyll serve`
-5. Submit a pull request
-
-### Pull Request Guidelines
-
-- Include a clear description of your post topic
-- Verify images load correctly
-- Ensure front matter is properly formatted
-- Test the site builds without errors
-
-## Contact
-
-- **Email:** security@ifood.com.br
-- **Twitter:** [@ifoodsecurity](https://twitter.com/ifoodsecurity)
-- **GitHub:** [@ifoodsecurity](https://github.com/ifoodsecurity)
-- **LinkedIn:** [iFood](https://www.linkedin.com/company/ifood-/)
-- **Instagram:** [@ifooduniverso](https://www.instagram.com/ifooduniverso/)
-- **Medium:** [iFood Engineering](https://medium.com/ifood-engineering)
-
-## License
-
-This blog is maintained by the iFood Security team.
-
-## Additional Resources
-
-- [Jekyll Documentation](https://jekyllrb.com)
-- [Minimal Mistakes Theme](https://mmistakes.github.io/minimal-mistakes/)
-- [GitHub Pages Documentation](https://docs.github.com/en/pages)
-
----
-
-**Happy writing! Share your security knowledge with the world.** 🔐
+Release-level changes should be recorded in [CHANGELOG.md](CHANGELOG.md).

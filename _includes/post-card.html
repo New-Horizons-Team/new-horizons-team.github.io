@@ -1,0 +1,23 @@
+{% assign item = include.post %}
+{% assign card_author = site.data.authors[item.author] %}
+{% assign card_image = item.image | default: site.og_image %}
+<article class="post-card{% if include.variant %} post-card--{{ include.variant }}{% endif %}">
+  <a class="post-card__link" href="{{ item.url | relative_url }}" aria-label="Read {{ item.title | escape }}"></a>
+  <div class="post-card__media">
+    <img src="{{ card_image | relative_url }}" alt="" loading="{% if include.variant == 'lead' %}eager{% else %}lazy{% endif %}"{% if include.variant == 'lead' %} fetchpriority="high"{% endif %} width="720" height="405">
+  </div>
+  <div class="post-card__body">
+    {% if item.topic %}<span class="topic-badge">{{ item.topic }}</span>{% endif %}
+    <h3>{{ item.title }}</h3>
+    {% if include.variant != 'compact' %}<p class="post-card__excerpt">{{ item.excerpt | default: item.description | strip_html | strip_newlines }}</p>{% endif %}
+    <div class="post-card__meta">
+      {% if card_author %}
+        <span class="post-card__author">
+          <img src="{{ card_author.avatar | relative_url }}" width="30" height="30" alt="">
+          <span>{{ card_author.name }}</span>
+        </span>
+      {% endif %}
+      <time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: "%b %-d, %Y" }}</time>
+    </div>
+  </div>
+</article>

@@ -1,29 +1,35 @@
-<div style="display: flex; justify-content: space-between; align-items: center;">
-  <div>
-    <img class="footer-logo" src="/assets/img/ifood-logo-red.png" />
-  </div>
-  
-  <div class="page__footer-copyright">&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. 
-    {{ site.data.ui-text[site.locale].powered_by | default: "Powered by" }} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
-  
-  <div class="page__footer-follow">
-    <ul class="social-icons">
-      {% if site.data.ui-text[site.locale].follow_label %}
-        <li><strong>{{ site.data.ui-text[site.locale].follow_label }}</strong></li>
-      {% endif %}
-  
-      {% if site.footer.links %}
-        {% for link in site.footer.links %}
-          {% if link.label and link.url %}
-            <li><a href="{{ link.url }}" rel="nofollow noopener noreferrer"><i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i> {{ link.label }}</a></li>
-          {% endif %}
-        {% endfor %}
-      {% endif %}
-  
-      {% unless site.atom_feed.hide %}
-        <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a></li>
-      {% endunless %}
-    </ul>
-  </div> 
-</div>
+<footer class="site-footer">
+  <div class="container site-footer__main">
+    <div class="site-footer__brand">
+      <img src="{{ '/assets/img/ifood-logo-red.png' | relative_url }}" width="58" height="58" alt="">
+      <h2>iFood Security</h2>
+      <p>Security engineering, research, and open-source insights from the teams protecting iFood at scale.</p>
+    </div>
 
+    <div>
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="{{ '/' | relative_url }}">Articles</a></li>
+        <li><a href="{{ '/topics/' | relative_url }}">Topics</a></li>
+        <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+        <li><a href="{{ '/feed.xml' | relative_url }}">RSS feed</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Connect</h3>
+      <ul>
+        <li><a href="mailto:{{ site.email }}">Email the team</a></li>
+        {% for link in site.footer.links %}
+          <li><a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="site-footer__legal">
+    <div class="container">
+      <span>&copy; {{ site.time | date: '%Y' }} iFood. All rights reserved.</span>
+      <span>Built in the open with Jekyll.</span>
+    </div>
+  </div>
+</footer>

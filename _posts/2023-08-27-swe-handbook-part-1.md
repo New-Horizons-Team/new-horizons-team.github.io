@@ -3,11 +3,14 @@ layout: post
 title: "Software Engineering Handbook (Part 1) - Introduction"
 date: 2023-08-27 16:00:00 -0300
 categories: software engineering
+description: "Explore why modern security teams need solid software engineering practices, plus a practical handbook roadmap for building maintainable internal tools."
+excerpt: "Why security teams need maintainable software and where to begin."
+topic: "Secure Engineering"
 author_profile: true
 author: caio.ferreira
 ---
 
-### Introduction
+## Introduction
 
 This handbook provides the first steps to various concepts widely used in software development that can help build solutions for teams in all technology segments, especially in Security.
 
@@ -15,16 +18,17 @@ Coming into CyberSecurity, I understood that many solutions built outside vendor
 
 First, one of the guidelines presented is "Keep it Simple", so I understand the fear of overengineering simple tasks. However, most of what we will talk about is how to make software easier to work with and more reliable, not about how to make for loops in a fancy way or that you should use the latest framework on the market. Since these are our goals, simplicity will always matter. Good code is the one that best deals with the complexity of the task at hand. It doesn't mean the solution will be easy because many problems aren't, but we avoid bringing even more complexity and seek to improve maintenance and debugging.
 
-Second, looking at the landscape in Security shows us that we are not living anymore in a world of just workaround scrips and simple automations. We are no longer securing just an executable in bare metal but also APIs, cloud configurations and networks, containers, CI/CD pipelines, mobile apps, data lakes & data pipelines, no-code/low-code platforms, open source dependencies, and more. The surface area to secure has exploded, and we can expect more diversity in our ecosystem. This explosion produces a two-fold problem: new vendors with solutions for these technologies have high-noise products that are still maturing, and the volume of logs and information has skyrocketed, making traditional SIEM costs even more aggressive.
+Second, looking at the landscape in Security shows us that we are not living anymore in a world of just workaround scripts and simple automations. We are no longer securing just an executable in bare metal but also APIs, cloud configurations and networks, containers, CI/CD pipelines, mobile apps, data lakes & data pipelines, no-code/low-code platforms, open source dependencies, and more. The surface area to secure has exploded, and we can expect more diversity in our ecosystem. This explosion produces a two-fold problem: new vendors with solutions for these technologies have high-noise products that are still maturing, and the volume of logs and information has skyrocketed, making traditional SIEM costs even more aggressive.
 
 [Mark Curphey puts it well](https://blog.crashoverride.com/a-security-tools-crash-is-coming): security teams want fewer tools because vendors can't deliver the same way as before. Solutions in the modern stack demand much more context about your organization's practices to deliver high value and be cost-efficient. This produced the situation where we are building more internally, taking advantage of more generalist platforms like Kubernetes, and leveraging open source. Hence, as software projects grow bigger in Security, we also need to scale our knowledge on how to build them.
 
 After this long introduction, where I hope not to have lost you, below you will find an index of the chapters, which will be updated as each one is published. They are as concise and objective as possible to work as an explanation and a reference.
 
-### Chapters
+## Chapters
 1. [Clean Coding]({% post_url 2023-08-27-swe-handbook-part-2 %})
+2. [Single Responsibility Principle]({% post_url 2023-10-25-swe-handbook-part-3 %})
 
-### Glossary
+## Glossary
 
 - Class: it is a cake recipe, it defines how data (fields/fields/attributes) and behaviors (methods) relates inside the same concept. For example, a `Stack` class defines a sorted list of data and implements methods like `Pop`, `Push`, and `Len`, which exposes the expected behavior of `Stack`.
 - Object: it is a specific instance of a class, e.g., two chocolate cakes are different even if made from the same recipe. Two objects of class `Stack` have the same methods but can contain completely different data since they are separate memory locations.
