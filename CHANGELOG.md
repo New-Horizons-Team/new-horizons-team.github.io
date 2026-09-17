@@ -4,6 +4,16 @@ All notable changes to the iFood Security Blog are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html) for major site releases.
 
+## [2.0.1] - 2026-09-17
+
+### Changed
+
+- Updated the Emanuel Valente author portrait and removed the superseded image asset.
+
+### Fixed
+
+- Preserved accessible contrast for visited, active, focused, current, and hovered links in the mobile navigation.
+
 ## [2.0.0] - 2026-09-17
 
 ### Added
