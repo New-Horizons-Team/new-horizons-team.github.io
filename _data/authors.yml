@@ -63,4 +63,12 @@ caio.ferreira:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/caiorcferreira"
+michelle.mesquita:
+  name        : "Michelle Mesquita"
+  bio         : "AI Security Engineer"
+  avatar      : "/assets/authors/michelle.png"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:michelle.mesquita@ifood.com.br"
 
